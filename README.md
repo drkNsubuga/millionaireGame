@@ -4,6 +4,7 @@ Millionaire Game is a simple text-based command-line game written in C++. It sim
 
 ## Features
 - Single-player mode: Play the game alone and try to answer as many questions correctly as possible.
+- Multiplayer mode for playing the game with multiple players in turns
 - Load questions from a text file: Questions are stored in a text file in a specific format and are loaded into the game.
 - Handle very large amounts of money
 
@@ -12,10 +13,8 @@ Millionaire Game is a simple text-based command-line game written in C++. It sim
 2. Make sure you have a C++ compiler installed on your system.
 3. Compile the source code files using a C++ compiler:
    ```bash
-   g++ -o millionaire_game main.cpp
+   ./build.sh
    ```
-   
-Adjust the command as necessary based on your compiler and system.
 
 ## Usage
 1. Ensure you have compiled the program as described in the installation steps.
@@ -28,14 +27,14 @@ Option C
 Option D
 Correct Option: Option B
 ```
-3. Run the compiled executable file:
+
+4. Run the compiled executable file:
 ```bash
 ./millionaire_game
 ```
 4. Follow the on-screen prompts to select the game mode and play the game.
 
 ## Roadmap
-- Multiplayer mode: Add support for playing the game with multiple players.
 - Fetch questions from an API
 - Shuffle Questions
 - Shuffle Answers
