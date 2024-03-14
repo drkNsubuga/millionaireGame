@@ -1,74 +1,49 @@
 #include <iostream>
+#include <fstream>
 #include <vector>
 #include <cstdlib>
 #include <ctime>
+#include <algorithm>
+#include <string>
+#include "question_functions.h"
+#include "player_functions.h"
 
 using namespace std;
 
-// Define a structure for each question
-struct Question {
-    string question;
-    vector<string> options;
-    char correctOption;
-};
-
-// Function to display a question and its options
-void displayQuestion(const Question& q) {
-    cout << q.question << endl;
-    for (int i = 0; i < q.options.size(); ++i) {
-        cout << char('A' + i) << ") " << q.options[i] << endl;
-    }
-    cout << "Your answer: ";
-}
-
-// Function to check if the answer is correct
-bool checkAnswer(const Question& q, char answer) {
-    return (toupper(answer) == toupper(q.correctOption));
-}
-
-// Function to load questions from hardcoded sample data
-vector<Question> loadSampleQuestions() {
-    vector<Question> questions = {
-        {"What is the capital of France?", {"London", "Paris", "Berlin", "Rome"}, 'B'},
-        {"Who wrote 'Romeo and Juliet'?", {"William Shakespeare", "Charles Dickens", "Jane Austen", "Leo Tolstoy"}, 'A'},
-        {"What is the largest mammal?", {"Elephant", "Blue whale", "Giraffe", "Hippopotamus"}, 'B'}
-    };
-
-    return questions;
-}
 int main() {
     // Seed the random number generator
     srand(time(0));
 
     // Sample questions
-    vector<Question> questions = loadSampleQuestions();
+    vector<Question> questions = loadQuestionsFromFile("questions.txt");
 
-    int totalQuestions = questions.size();
-    int currentQuestionIndex = 0;
-    int moneyWon = 0;
-
-    cout << "Welcome to Who Wants to Be a Millionaire!" << endl;
-
-    while (currentQuestionIndex < totalQuestions) {
-        cout << "Question " << currentQuestionIndex + 1 << "/" << totalQuestions << endl;
-        displayQuestion(questions[currentQuestionIndex]);
-
-        char playerAnswer;
-        cin >> playerAnswer;
-
-        if (checkAnswer(questions[currentQuestionIndex], playerAnswer)) {
-            cout << "Correct!" << endl;
-            moneyWon += 1000; // Increment money by 1000 for each correct answer
+  cout << "Welcome to Who Wants to Be a Millionaire!" << endl;
+    
+    int choice;
+    bool validChoice = false;
+    do {
+        cout << "Select game mode:" << endl;
+        cout << "1. Single Player" << endl;
+        cout << "2. Multiplayer" << endl;
+        cout << "Enter your choice: ";
+        cin >> choice;
+        if (choice == 1 || choice == 2) {
+            validChoice = true;
         } else {
-            cout << "Incorrect!" << endl;
-            //break;
+            cout << "Invalid choice! Please try again." << endl;
         }
+    } while (!validChoice);
 
-        cout << "You've won $" << moneyWon << endl << endl;
-        ++currentQuestionIndex;
+    switch (choice) {
+        case 1:
+            playSinglePlayer(questions);
+            break;
+        case 2:
+            playMultiPlayer(questions);
+            break;
+        default:
+            cout << "Invalid choice! Exiting..." << endl;
     }
-
-    cout << "Thank you for playing! You've won a total of $" << moneyWon << endl;
 
     return 0;
 }
