@@ -1,4 +1,5 @@
 # Millionaire Game
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/drkNsubuga/millionaireGame/total) ![License](https://img.shields.io/github/license/drkNsubuga/millionaireGame)
 
 Millionaire Game is a simple text-based command-line game written in C++. It simulates the famous "Who Wants to Be a Millionaire" quiz show. The game reads questions from a text file, presents them to the player, and awards money for each correct answer. The game ends if the player answers incorrectly or if all questions are answered.
 
