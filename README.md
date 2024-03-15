@@ -36,14 +36,14 @@ Correct Option: Option B
 4. Follow the on-screen prompts to select the game mode and play the game.
 
 ## Roadmap
-- Fetch questions from an API
-- Shuffle Questions
-- Shuffle Answers
-- Countdown timer for each question to increase the challenge.
-- Lifelines: Implement lifelines such as "50:50", "Ask the Audience", and "Phone a Friend" to help the player.
-- Difficulty levels: Allow the player to choose the difficulty level of the questions.
-- Scoreboard: Display a scoreboard at the end of the game to show players' rankings.
-- Sound effects to enhance the gaming experience.
+- [ ] Fetch questions from an API
+- [ ] Shuffle Questions
+- [ ] Shuffle Answers
+- [ ] Countdown timer for each question to - - [ ] increase the challenge.
+git
+- [ ] Difficulty levels: Allow the player to choose the difficulty level of the questions.
+- [ ] Scoreboard: Display a scoreboard at the end of the game to show players' rankings.
+- [ ] Sound effects to enhance the gaming experience.
 
 ## License
 This project is licensed under the [MIT LICENSE](./LICENSE) - see the LICENSE file for details.

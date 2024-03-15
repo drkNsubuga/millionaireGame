@@ -14,9 +14,10 @@ int main() {
     // Seed the random number generator
     srand(time(0));
 
-    // Sample questions
+    //load questions
+    // vector<Question> questions = loadSampleQuestions();
     vector<Question> questions = loadQuestionsFromFile("questions.txt");
-
+     
   cout << "Welcome to Who Wants to Be a Millionaire!" << endl;
     
     int choice;
