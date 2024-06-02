@@ -39,8 +39,7 @@ Correct Option: Option B
 - [ ] Fetch questions from an API
 - [ ] Shuffle Questions
 - [ ] Shuffle Answers
-- [ ] Countdown timer for each question to - - [ ] increase the challenge.
-git
+- [ ] Countdown timer for each question to increase the challenge.
 - [ ] Difficulty levels: Allow the player to choose the difficulty level of the questions.
 - [ ] Scoreboard: Display a scoreboard at the end of the game to show players' rankings.
 - [ ] Sound effects to enhance the gaming experience.
